@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Centered Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Full height of the viewport */
+            display: flex;
+            justify-content: center; /* Center flex container horizontally */
+            align-items: center; /* Center flex container vertically */
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px; /* Space between items */
+            width: 800px; /* Fixed width for the container */
+            height: 800px; /* Fixed height for the container */
+            padding: 20px;
+            background-color: #f0f0f0; /* Optional: Background for container */
+            border-radius: 10px; /* Optional: Rounded corners */
+        }
+
+        .flex-item {
+            flex: 0 0 48%; /* Default: Each item takes 48% of the container width */
+            height: 200px; /* Adjust height for items */
+            background-color: #3498db;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+        }
+
+        /* Smaller width for Item 3 */
+        .flex-item.small {
+            flex: 0 0 40%; /* Set Item 3 to 40% width */
+            height: 250px; /* Adjust height for Item 3 */
+        }
+
+        /* Larger width for Item 4 */
+        .flex-item.large-item {
+            flex: 0 0 55%; /* Set Item 4 to 58% width */
+            height: 250px; /* Adjust height for Item 4 */
+        }
+
+        /* The larger item that spans two columns */
+        .flex-item.large {
+            flex: 0 0 100%; /* Takes full width of the container */
+            background-color: #e74c3c; /* Different background for visibility */
+            height: 280px; /* Adjust height for the larger item */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flex-container">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item small">Item 3</div>
+        <div class="flex-item large-item">Item 4</div>
+        <div class="flex-item large">Item 5</div> <!-- Large item spanning two columns -->
+    </div>
+
+</body>
+</html>

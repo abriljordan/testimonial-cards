@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Centered Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Full height of the viewport */
+            display: flex;
+            justify-content: center; /* Center flex container horizontally */
+            align-items: center; /* Center flex container vertically */
+            background-color: #eaeaea; /* Optional background for the body */
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px; /* Space between items */
+            width: 800px; /* Fixed width for the container */
+            height: 800px; /* Fixed height for the container */
+            padding: 20px;
+            background-color: #f0f0f0; /* Background for container */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        .flex-item {
+            flex: 0 0 48%; /* Default: Each item takes 48% of the container width */
+            height: 200px; /* Adjust height for items */
+            background-color: #3498db; /* Default background color */
+            color: white;
+            display: flex;
+            flex-direction: column; /* Allow vertical stacking */
+            justify-content: space-between; /* Space between content */
+            border-radius: 30px;
+            padding: 15px; /* Add padding for better spacing */
+            position: relative; /* Position relative for quote */
+        }
+
+        /* Smaller width for Item 3 */
+        .flex-item.small {
+            flex: 0 0 40%; /* Set Item 3 to 40% width */
+            height: 250px; /* Adjust height for Item 3 */
+        }
+
+        /* Larger width for Item 4 */
+        .flex-item.large-item {
+            flex: 0 0 55%; /* Set Item 4 to 55% width */
+            height: 250px; /* Adjust height for Item 4 */
+        }
+
+        /* The larger item that spans two columns */
+        .flex-item.large {
+            flex: 0 0 100%; /* Takes full width of the container */
+            background-color: #e74c3c; /* Different background for visibility */
+            height: 280px; /* Adjust height for the larger item */
+        }
+
+        /* Profile Section */
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px; /* Space between profile and quote */
+        }
+
+        .profile-pic {
+            width: 50px; /* Profile picture width */
+            height: 50px; /* Profile picture height */
+            border-radius: 50%; /* Make it circular */
+            margin-right: 10px; /* Space between picture and text */
+        }
+
+        .info h3 {
+            margin: 0; /* No margin for the name */
+            font-size: 1.2rem; /* Font size for the name */
+        }
+
+        .job-title {
+            margin: 0; /* No margin for the job title */
+            font-size: 0.9rem; /* Font size for the job title */
+        }
+
+        /* Quote Section */
+        .quote {
+            background-color: #f9f9f9; /* Background color for the quote */
+            padding: 10px; /* Padding around the quote */
+            border-radius: 10px; /* Rounded corners for the quote */
+            position: relative; /* Position relative for pseudo-element */
+            flex-grow: 1; /* Allow quote to grow and fill space */
+            display: flex;
+            align-items: center; /* Center content vertically */
+        }
+
+        .quote p {
+            font-style: italic; /* Italic style for the quote */
+            font-size: 0.9rem; /* Font size for the quote */
+            margin: 0; /* No margin */
+        }
+
+        .quote::before {
+            content: "“"; /* Decorative quote mark */
+            font-size: 2rem; /* Size of the quote mark */
+            position: absolute; /* Position the quote mark */
+            top: -10px; /* Position it above the quote */
+            left: 10px; /* Position it to the left of the quote */
+            color: #3498db; /* Color for the quote mark */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flex-container">
+        <div class="flex-item">
+            <div class="profile">
+                <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+                <div>
+                    <h3>John Doe</h3>
+                    <p class="job-title">Software Engineer</p>
+                </div>
+            </div>
+            <div class="quote">
+                <p>"This is a bubble quote that describes the user experience with the product or service."</p>
+            </div>
+        </div>
+
+        <div class="flex-item">
+            <div class="profile">
+                <img src="profile-pic2.jpg" alt="Profile Picture" class="profile-pic">
+                <div>
+                    <h3>Jane Smith</h3>
+                    <p class="job-title">Product Manager</p>
+                </div>
+            </div>
+            <div class="quote">
+                <p>"This product has greatly improved my workflow and efficiency."</p>
+            </div>
+        </div>
+
+        <div class="flex-item small">
+            <div class="profile">
+                <img src="profile-pic3.jpg" alt="Profile Picture" class="profile-pic">
+                <div>
+                    <h3>Mike Johnson</h3>
+                    <p class="job-title">UI/UX Designer</p>
+                </div>
+            </div>
+            <div class="quote">
+                <p>"I love how intuitive the interface is!"</p>
+            </div>
+        </div>
+
+        <div class="flex-item large-item">
+            <div class="profile">
+                <img src="profile-pic4.jpg" alt="Profile Picture" class="profile-pic">
+                <div>
+                    <h3>Emily Davis</h3>
+                    <p class="job-title">Marketing Specialist</p>
+                </div>
+            </div>
+            <div class="quote">
+                <p>"This tool has changed the way I communicate with my team."</p>
+            </div>
+        </div>
+
+        <div class="flex-item large">
+            <div class="profile">
+                <img src="profile-pic5.jpg" alt="Profile Picture" class="profile-pic">
+                <div>
+                    <h3>Chris Brown</h3>
+                    <p class="job-title">Data Analyst</p>
+                </div>
+            </div>
+            <div class="quote">
+                <p>"An essential resource for data-driven decision-making!"</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
